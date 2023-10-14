@@ -5,8 +5,8 @@ if (typed) {
   new Typed('.typed', {
     strings: typed_strings,
     loop: true,
-    typeSpeed: 50,
-    backSpeed: 20,
+    typeSpeed: 40,
+    backSpeed: 15,
     backDelay: 2000
   });
 }

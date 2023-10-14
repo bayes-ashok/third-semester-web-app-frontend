@@ -1,12 +1,14 @@
-@import url(https://fonts.googleapis.com/css?family=Poppins:300);
+
  *, *:before, *:after {
 	 box-sizing: border-box;
 }
  body {
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
-	 background: #01939c;
-   overflow-y: hidden!important;
-	 font-family: 'Poppins', sans-serif;
+  margin: 0;
 }
  a {
 	 text-decoration: none;
@@ -16,9 +18,11 @@
  a:hover {
 	 color: #179b77;
 }
+
  .form {
 	 background: #12141d;
 	 padding: 40px;
+     
 	 max-width: 600px;
 	 margin: 40px auto;
 	 border-radius: 15px;
@@ -125,5 +129,11 @@
  .forgot {
 	 margin-top: -20px;
 	 text-align: right;
+}
+@media (max-width: 768px) {
+    .tab-group li a {
+      font-size: 18px;
+      padding: 12px;
+    }
 }
  

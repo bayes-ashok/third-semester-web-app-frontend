@@ -9,12 +9,21 @@
 .h-custom {
     height: calc(100% - 73px);
 }
+
+figure.text-justify {
+    text-align: justify;
+  }
+  
 .icon-and-name {
     display: flex;
     align-items: center;
     flex-direction: row;
     margin-bottom: 20px;
   }
+  .with-border {
+    border: 2px solid black;
+}
+
   
   .app-icon {
     width: 50px;

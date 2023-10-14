@@ -13,6 +13,18 @@
 figure.text-justify {
     text-align: justify;
   }
+  .centered-image {
+    
+    text-align: center; /* Center horizontally */
+}
+h1{
+  font-weight: bold;
+  text-align: left;
+}
+.centered-image img {
+    display: block;
+    margin: 0 auto; /* Center vertically */
+}
   
 .icon-and-name {
     display: flex;

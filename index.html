@@ -7,8 +7,8 @@
   <title>SAJILOCITY</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css">
-  
-  
+
+
 </head>
 
 <body>
@@ -19,11 +19,11 @@
           <figure class="text-justify centered-image">
             <img src="C:\Users\LENOVO\Downloads\smartcity-arsonmetering.jpg" class="img-fluid" alt="Sample image"
               width="400">
-              <h1 style="text-align: center; color: #333;">
-                What is Sajilo City?
-              </h1>
+            <h1 style="text-align: center; color: #333;">
+              What is Sajilo City?
+            </h1>
             <figcaption>
-                Sajilo City <span class="typed" data-typed-items="
+              Sajilo City <span class="typed" data-typed-items="
                 is a web application for simplifying urban living.,
                 allows you to report issues effortlessly.,
                 is more than just issue reporting.,
@@ -48,17 +48,19 @@
             </div>
             <h5 class="fw-normal mb-3" style="letter-spacing: 1px;">Sign into your account</h5>
             <form>
-                <!-- Email input -->
-                <div class="form-outline mb-4">
-                  <input type="email" id="inputField1" class="form-control form-control-lg" placeholder="Enter your Email"/>
-                  <label class="form-label" for="inputField1">Email address</label>
-                </div>
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <input type="email" id="inputField1" class="form-control form-control-lg"
+                  placeholder="Enter your Email" />
+                <label class="form-label" for="inputField1">Email address</label>
+              </div>
 
-                <!-- Password input -->
-                <div class="form-outline mb-3">
-                  <input type="password" id="inputField2" class="form-control form-control-lg" placeholder="Enter your password" />
-                  <label class="form-label" for="inputField2">Password</label>
-                </div>
+              <!-- Password input -->
+              <div class="form-outline mb-3">
+                <input type="password" id="inputField2" class="form-control form-control-lg"
+                  placeholder="Enter your password" />
+                <label class="form-label" for="inputField2">Password</label>
+              </div>
 
               <div class="d-flex justify-content-between align-items-center">
                 <!-- Checkbox -->
@@ -74,23 +76,50 @@
               <div class="text-center text-lg-start mt-4 pt-2">
                 <button type="button" class="btn btn-primary btn-lg"
                   style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
-                <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="#!"
-                    class="link-danger">Register</a></p>
+                  <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? 
+                  <a href="#!" class="link-danger" id="showRegisterForm">Register</a></p>
               </div>
 
+            </form>
+            <form id="registerForm">
+              <!-- Registration form fields -->
+              <div class="form-outline mb-4">
+                <input type="text" id="inputField3" class="form-control form-control-lg"
+                  placeholder="Enter your Name" />
+                <label class="form-label" for="inputField3">Name</label>
+              </div>
+              <div class="form-outline mb-4">
+                <input type="email" id="inputField4" class="form-control form-control-lg"
+                  placeholder="Enter your Email" />
+                <label class="form-label" for="inputField4">Email address</label>
+              </div>
+              <div class="form-outline mb-3">
+                <input type="password" id="inputField5" class="form-control form-control-lg"
+                  placeholder="Create a Password" />
+                <label class="form-label" for="inputField5">Password</label>
+              </div>
+              <!-- ... (other registration form fields) ... -->
+
+              <div class="text-center text-lg-start mt-4 pt-2">
+                <button type="button" class="btn btn-primary btn-lg"
+                  style="padding-left: 2.5rem; padding-right: 2.5rem;">Register</button>
+                <p class="small fw-bold mt-2 pt-1 mb-0">Already have an account? <a href="#!" class="link-danger"
+                    id="showLoginForm">Login</a></p>
+              </div>
             </form>
           </div>
         </div>
       </div>
     </div>
-
   </section>
-  <footer style="position: fixed; bottom: 0; width: 100%; background-color: #f0f0f0; text-align: center; padding: 10px;">
-    Designed by <a href="https://www.facebook.com/profile.php?id=100076767633820" target="_blank" style="text-decoration: none; color: black; font-weight: bold;">Ashok Shah</a>
+  <footer
+    style="position: fixed; bottom: 0; width: 100%; background-color: #f0f0f0; text-align: center; padding: 10px;">
+    Designed by <a href="https://www.facebook.com/profile.php?id=100076767633820" target="_blank"
+      style="text-decoration: none; color: black; font-weight: bold;">Ashok Shah</a>
   </footer>
   <script src="js/typed.js/typed.umd.js"></script>
   <script src="js/main.js"></script>
-  
+
 </body>
 
 </html>

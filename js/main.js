@@ -1,3 +1,4 @@
+// Animation in the login page
 const typed = document.querySelector('.typed')
 if (typed) {
   let typed_strings = typed.getAttribute('data-typed-items')
@@ -10,4 +11,7 @@ if (typed) {
     backDelay: 2000
   });
 }
+
+// page switch betn login and signup
+
 

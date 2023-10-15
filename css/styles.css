@@ -83,15 +83,10 @@ figcaption {
   opacity: 1;
   animation-delay: 0.4s;
 }
-/* Apply styles to the form container to make it scrollable */
-/* Apply styles to the form container to make it scrollable */
 
-
-#registerForm{
-  display: none;
-}
-.show-form {
-  display: block;
+.modal-backdrop.static {
+  opacity: 0.5; /* Adjust the opacity level as desired */
+  background-color: #000; /* Adjust the background color as desired */
 }
 
 @media (max-width: 450px) {

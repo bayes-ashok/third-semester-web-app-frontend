@@ -1,49 +1,52 @@
 .divider:after,
 .divider:before {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background: #eee;
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
 }
+
 body {
   overflow-y: auto;
 }
 
 .h-custom {
-    height: calc(100% - 73px);
+  height: calc(100% - 73px);
 }
 
 figure.text-justify {
-    text-align: justify;
-  }
-  .centered-image {
-    
-    text-align: center; /* Center horizontally */
+  text-align: justify;
+}
+
+.centered-image {
+  text-align: center;
 }
 
 figcaption {
   text-align: center;
-  font-size: 18px; /* Adjust the font size as needed */
-  color: #555; /* Text color */
-  margin: 20px 0; /* Add spacing around the figcaption */
+  font-size: 18px;
+  color: #555;
+  margin: 20px 0;
 }
 
 .typed {
-  font-weight: bold; /* Make the typed text bold */
+  font-weight: bold;
 }
+
 .centered-image img {
-    display: block;
-    margin: 0 auto; /* Center vertically */
+  display: block;
+  margin: 0 auto;
 }
-  
+
 .icon-and-name {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    margin-bottom: 20px;
-  }
-  .with-border {
-    border: 2px solid black;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+.with-border {
+  border: 2px solid black;
 }
 
 .compact-instructions {
@@ -52,23 +55,23 @@ figcaption {
   color: #888;
 }
 
-  .app-icon {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-  }
-  
-  .app-name {
-    margin: 0; /* Reset margin */
-    font-weight: bold; /* Make the title bold */
-  }
-/* Add the following CSS to your stylesheet to style the label animation */
+.app-icon {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.app-name {
+  margin: 0;
+  font-weight: bold;
+}
+
 .form-outline {
   position: relative;
 }
 
-.form-control:focus + .form-label,
-.form-control:not(:placeholder-shown) + .form-label {
+.form-control:focus+.form-label,
+.form-control:not(:placeholder-shown)+.form-label {
   top: -11px;
   padding: 2px;
   font-size: 12px;
@@ -84,21 +87,35 @@ figcaption {
 
   transition: 0.3s ease-in-out;
 }
+
 .form-control::placeholder {
   opacity: 0;
 }
-.form-control:focus::placeholder{
+
+.form-control:focus::placeholder {
   opacity: 1;
   animation-delay: 0.4s;
 }
 
+#emailWarning {
+  color: red;
+  font-size: 12px;
+}
+
+.warning {
+  color: red;
+  font-size: 12px;
+}
+
 .modal-backdrop.static {
-  opacity: 0.5; /* Adjust the opacity level as desired */
-  background-color: #000; /* Adjust the background color as desired */
+  opacity: 0.5;
+  /* Adjust the opacity level as desired */
+  background-color: #000;
+  /* Adjust the background color as desired */
 }
 
 @media (max-width: 450px) {
-    .h-custom {
-        height: 100%;
-    }
+  .h-custom {
+    height: 100%;
+  }
 }

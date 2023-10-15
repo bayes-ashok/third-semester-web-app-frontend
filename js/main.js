@@ -17,14 +17,55 @@ document.addEventListener("DOMContentLoaded", function () {
   const emailInput = document.getElementById("inputField1");
   const passwordInput = document.getElementById("inputField2");
   const rememberMeCheckbox = document.getElementById("rememberMe");
+  const emailWarning = document.getElementById("emailWarning");
+  const passwordWarning = document.getElementById("passwordWarning");
 
-  // Check if "rememberMe" data is stored in local storage and populate the fields if it exists
-  if (localStorage.getItem("rememberMeData")) {
-    const data = JSON.parse(localStorage.getItem("rememberMeData"));
-    emailInput.value = data.email;
-    passwordInput.value = data.password;
-    rememberMeCheckbox.checked = true;
+  // Function to validate an email address using a regular expression
+  function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
   }
+
+  // Add an input event listener to the email field for real-time validation
+  emailInput.addEventListener("input", function () {
+    const email = emailInput.value;
+    if (!isValidEmail(email)) {
+      emailWarning.innerText = "Please enter a valid email address.";
+      emailWarning.style.color = "red";
+    } else {
+      emailWarning.innerText = "";
+    }
+  });
+
+  // Add an input event listener to the password field for real-time validation
+  passwordInput.addEventListener("input", function () {
+    const password = passwordInput.value;
+    if (!password) {
+      passwordWarning.innerText = "Please enter a password.";
+      passwordWarning.style.color = "red";
+    } else {
+      passwordWarning.innerText = "";
+    }
+  });
+
+  // Add a blur event listener to the email and password fields
+  emailInput.addEventListener("blur", function () {
+    if (!isValidEmail(emailInput.value)) {
+      emailWarning.innerText = "Please enter a valid email address.";
+      emailWarning.style.color = "red";
+    } else {
+      emailWarning.innerText = "";
+    }
+  });
+
+  passwordInput.addEventListener("blur", function () {
+    if (!passwordInput.value) {
+      passwordWarning.innerText = "Please enter a password.";
+      passwordWarning.style.color = "red";
+    } else {
+      passwordWarning.innerText = "";
+    }
+  });
 
   // Add a click event listener to the "Login" button
   document.getElementById("loginButton").addEventListener("click", function () {
@@ -32,16 +73,30 @@ document.addEventListener("DOMContentLoaded", function () {
     const email = emailInput.value;
     const password = passwordInput.value;
 
-    // Check if "Remember Me" is checked and save data to local storage
-    if (rememberMeCheckbox.checked) {
-      const rememberMeData = JSON.stringify({ email, password });
-      localStorage.setItem("rememberMeData", rememberMeData);
-    } else {
-      // If "Remember Me" is not checked, remove the data from local storage
-      localStorage.removeItem("rememberMeData");
+    // Check if a valid email is provided
+    if (!isValidEmail(email)) {
+      emailWarning.innerText = "Please enter a valid email address.";
+      emailWarning.style.color = "red";
+      return;
     }
 
-    // Perform other login actions as needed
+    // Check if a password is provided
+    if (!password) {
+      // Display a warning if no password is provided
+      passwordWarning.innerText = "Please enter a password.";
+      passwordWarning.style.color = "red";
+      return;
+    }
+
+    // If both email and a password (any value) are provided, you can perform the login action
     // Example: loginForm.submit();
+    window.location.href = "https://www.fb.com";
   });
 });
+
+
+
+
+
+
+

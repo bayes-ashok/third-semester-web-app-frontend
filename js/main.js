@@ -21,6 +21,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const emailWarning = document.getElementById("emailWarning");
   const passwordWarning = document.getElementById("passwordWarning");
 
+  // Load stored "Remember Me" data from local storage
+  const storedData = localStorage.getItem("rememberMeData");
+  if (storedData) {
+    const data = JSON.parse(storedData);
+    emailInput.value = data.email;
+    passwordInput.value = data.password;
+    rememberMeCheckbox.checked = true;
+  }
+
   //email address validation
   function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -85,6 +94,14 @@ document.addEventListener("DOMContentLoaded", function () {
       passwordWarning.innerText = "Please enter a password.";
       passwordWarning.style.color = "red";
       return;
+    }
+
+    // Check if "Remember Me" is checked and save data to local storage
+    if (rememberMeCheckbox.checked) {
+      const rememberMeData = JSON.stringify({ email, password });
+      localStorage.setItem("rememberMeData", rememberMeData);
+    } else {
+      localStorage.removeItem("rememberMeData");
     }
 
     // If both email and a password (any value) are provided, we can perform the login action

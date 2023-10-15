@@ -5,6 +5,9 @@
     height: 1px;
     background: #eee;
 }
+body {
+  overflow-y: auto;
+}
 
 .h-custom {
     height: calc(100% - 73px);

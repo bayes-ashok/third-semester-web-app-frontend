@@ -46,7 +46,12 @@ figcaption {
     border: 2px solid black;
 }
 
-  
+.compact-instructions {
+  margin-top: 4px;
+  font-size: 14px;
+  color: #888;
+}
+
   .app-icon {
     width: 50px;
     height: 50px;

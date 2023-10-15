@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SAJILOCITY</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="css/styles.css">
-
-
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -17,8 +17,7 @@
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-md-8 col-lg-6 col-xl-5 mt-10">
           <figure class="text-justify centered-image">
-            <img src="C:\Users\LENOVO\Downloads\smartcity-arsonmetering.jpg" class="img-fluid" alt="Sample image"
-              width="400">
+            <img src="img/smartcity-arsonmetering.jpg" class="img-fluid" alt="Sample image" width="400">
             <h1 style="text-align: center; color: #333;">
               What is Sajilo City?
             </h1>
@@ -31,7 +30,7 @@
                 ensures your voice is heard.,
                 serves as a central hub for city-related updates.,
                 helps you stay informed about local events.,
-                ensures your concerns are addressed promptly.
+                ensures your concerns are addressed promptly.,
                 invites you to join us in transforming your city, one click at a time.">
               </span>
             </figcaption>
@@ -42,12 +41,13 @@
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 mt-10">
           <div class="card border shadow p-4">
             <div class="icon-and-name">
-              <img src="C:\Users\LENOVO\Downloads\vecteezy_smart-city-logo_11843203.jpg" alt="App Icon"
+              <img src="img/vecteezy_smart-city-logo_11843203.jpg" alt="App Icon"
                 class="app-icon rounded-circle with-border"> <!-- Make the image circular -->
               <span class="h1 fw-bold mb-0">Sajilo City</span> <!-- Replace with your app name -->
             </div>
-            <h5 class="fw-normal mb-3" style="letter-spacing: 1px;">Sign into your account</h5>
-            <form>
+
+            <form id="loginForm" class="show-form">
+              <h5 class="fw-normal mb-3" style="letter-spacing: 1px;">Sign into your account</h5>
               <!-- Email input -->
               <div class="form-outline mb-4">
                 <input type="email" id="inputField1" class="form-control form-control-lg"
@@ -76,37 +76,73 @@
               <div class="text-center text-lg-start mt-4 pt-2">
                 <button type="button" class="btn btn-primary btn-lg"
                   style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
-                  <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? 
-                  <a href="#!" class="link-danger" id="showRegisterForm">Register</a></p>
               </div>
 
             </form>
-            <form id="registerForm">
-              <!-- Registration form fields -->
-              <div class="form-outline mb-4">
-                <input type="text" id="inputField3" class="form-control form-control-lg"
-                  placeholder="Enter your Name" />
-                <label class="form-label" for="inputField3">Name</label>
-              </div>
-              <div class="form-outline mb-4">
-                <input type="email" id="inputField4" class="form-control form-control-lg"
-                  placeholder="Enter your Email" />
-                <label class="form-label" for="inputField4">Email address</label>
-              </div>
-              <div class="form-outline mb-3">
-                <input type="password" id="inputField5" class="form-control form-control-lg"
-                  placeholder="Create a Password" />
-                <label class="form-label" for="inputField5">Password</label>
-              </div>
-              <!-- ... (other registration form fields) ... -->
 
-              <div class="text-center text-lg-start mt-4 pt-2">
-                <button type="button" class="btn btn-primary btn-lg"
-                  style="padding-left: 2.5rem; padding-right: 2.5rem;">Register</button>
-                <p class="small fw-bold mt-2 pt-1 mb-0">Already have an account? <a href="#!" class="link-danger"
-                    id="showLoginForm">Login</a></p>
+
+            <!-- Button trigger modal -->
+            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account?
+              <button type="button" class="btn btn-primary" id="openModalBtn">
+                Register
+              </button>
+              
+            </p>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
+              aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form id="registerForm">
+                      <h5 class="fw-normal mb-3" style="letter-spacing: 1px;">Create New Account</h5>
+                      <!-- Registration form fields -->
+                      <div class="form-outline mb-4">
+                        <input type="text" id="inputField3" class="form-control form-control-lg"
+                          placeholder="Enter your Name" />
+                        <label class="form-label" for="inputField3">Name</label>
+                      </div>
+                      <div class="form-outline mb-4">
+                        <input type="email" id="inputField4" class="form-control form-control-lg"
+                          placeholder="Enter your Email" />
+                        <label class="form-label" for="inputField4">Email address</label>
+                      </div>
+
+                      <div class="form-outline mb-3">
+                        <input type="password" id="inputField5" class="form-control form-control-lg"
+                          placeholder="Create a Password" />
+                        <label class="form-label" for="inputField5">Password</label>
+                      </div>
+
+                      <div class="form-outline mb-3">
+                        <input type="password" id="inputField6" class="form-control form-control-lg"
+                          placeholder="Confirm Password" />
+                        <label class="form-label" for="inputField6">Confirm Password</label>
+                      </div>
+                      <!-- ... (other registration form fields) ... -->
+
+                      <div class="text-center text-lg-start mt-4 pt-2">
+                        <button type="button" class="btn btn-primary btn-lg"
+                          style="padding-left: 2.5rem; padding-right: 2.5rem;">Register</button>
+                        <p class="small fw-bold mt-2 pt-1 mb-2">Already have an account? <a href="#!"
+                            class="link-danger" id="showLoginForm">Login</a></p>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>

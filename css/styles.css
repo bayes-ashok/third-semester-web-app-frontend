@@ -83,9 +83,15 @@ figcaption {
   opacity: 1;
   animation-delay: 0.4s;
 }
+/* Apply styles to the form container to make it scrollable */
+/* Apply styles to the form container to make it scrollable */
+
 
 #registerForm{
   display: none;
+}
+.show-form {
+  display: block;
 }
 
 @media (max-width: 450px) {

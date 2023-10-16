@@ -110,6 +110,88 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+//validation in signup
+document.addEventListener("DOMContentLoaded", function () {
+  const registerForm = document.getElementById("registerForm");
+  const nameInput = document.getElementById("inputField3");
+  const emailInput = document.getElementById("inputField4");
+  const passwordInput = document.getElementById("inputField5");
+  const confirmPasswordInput = document.getElementById("inputField6");
+  const citizenshipPhotoInput = document.getElementById("citizenshipPhoto");
+  const registrationWarning = document.getElementById("registrationWarning");
+
+  //validate an email address
+  function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+
+  //input event listener to the email field for real-time validation
+  emailInput.addEventListener("input", function () {
+    const email = emailInput.value;
+    if (!isValidEmail(email)) {
+      registrationWarning.innerText = "Please enter a valid email address.";
+      registrationWarning.style.color = "red";
+    } else {
+      registrationWarning.innerText = "";
+    }
+  });
+
+  //click event listener to the "Register" button
+  document.querySelector("#exampleModal .btn-primary").addEventListener("click", function () {
+    const name = nameInput.value;
+    const email = emailInput.value;
+    const password = passwordInput.value;
+    const confirmPassword = confirmPasswordInput.value;
+    const citizenshipPhoto = citizenshipPhotoInput.files[0];
+
+    // email validation
+    if (!isValidEmail(email)) {
+      registrationWarning.innerText = "Please enter a valid email address.";
+      registrationWarning.style.color = "red";
+      return;
+    }
+
+    // password and confirm password match
+    if (password !== confirmPassword) {
+      registrationWarning.innerText = "Passwords do not match.";
+      registrationWarning.style.color = "red";
+      return;
+    }
+
+    // checks pw
+    if (!password) {
+      registrationWarning.innerText = "Please enter a password.";
+      registrationWarning.style.color = "red";
+      return;
+    }
+
+    //validate a strong password
+    function isValidStrongPassword(password) {
+      const strongPasswordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}$/;
+      return strongPasswordRegex.test(password);
+    }
+
+    //input event listener to the password field for real-time validation
+    passwordInput.addEventListener("input", function () {
+      const password = passwordInput.value;
+      if (!isValidStrongPassword(password)) {
+        registrationWarning.innerText = "Password must be strong (at least 8 characters with uppercase, lowercase, digits, and special characters).";
+        registrationWarning.style.color = "red";
+      } else {
+        registrationWarning.innerText = "";
+      }
+    });
+
+    // If all validations pass, you can proceed with registration
+    // Example: register the user
+
+    // Clear the registration warning
+    registrationWarning.innerText = "";
+  });
+});
+
+
 
 
 

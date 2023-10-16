@@ -7,6 +7,8 @@
   <title>SAJILOCITY</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
 
 </head>
@@ -53,7 +55,7 @@
                 <input type="email" id="inputField1" class="form-control form-control-lg"
                   placeholder="Enter your Email" />
                 <label class="form-label" for="inputField1">Email address</label>
-                <div id="emailWarning" class = "warning" style="color: red;"></div>
+                <div id="emailWarning" class="warning" style="color: red;"></div>
               </div>
 
               <!-- Password input -->
@@ -136,18 +138,29 @@
                           <label class="form-label" for="sCPW">Confirm Password</label>
                           <div id="confirmPasswordWarningSignUp" style="color: red;" class="warning"></div>
                         </div>
-                        
+
 
                         <div class="text-center text-lg-start pt-2">
                           <button id="registerButton" type="button" class="btn btn-primary btn-lg"
                             style="padding-left: 2.5rem; padding-right: 2.5rem;">Register</button>
                         </div>
-                <div class="notification" id="notification"></div>
 
                         <div id="registrationWarning" class="warning"></div>
                       </form>
                     </div>
                   </div>
+                  <div id="otpInputField" style="display: none;">
+                    <div class="form-outline mb-3">
+                      <p>Welcome to our secure login process. An OTP has been sent to your email. Please check your inbox and enter the OTP below:</p>
+                      <input type="text" id="otpInput" class="form-control form-control-lg" placeholder="Enter the OTP">
+                      <label class="form-label" for="otpInput">One-Time Password (OTP)</label>
+                      <div id="otpWarning" style="color: red;" class="warning"></div>
+                    </div>
+                    <button id="submitOTPButton" type="button" class="btn btn-primary btn-lg">
+                      Submit OTP
+                    </button>
+                  </div>
+                  
                 </div>
               </div>
             </div>

@@ -113,132 +113,133 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //validation in signup
 document.addEventListener("DOMContentLoaded", function () {
-  const registerForm = document.getElementById("registerForm");
-  const nameInput = document.getElementById("sName");
-  const emailInput = document.getElementById("sEmail");
-  const passwordInput = document.getElementById("sPW");
-  const confirmPasswordInput = document.getElementById("sCPW");
-  const citizenshipPhotoInput = document.getElementById("citizenshipPhoto");
-  const emailWarningSignUp = document.getElementById("emailWarningSignUp");
-  const passwordWarningSignUp = document.getElementById("passwordWarningSignUp");
-  const confirmPasswordWarningSignUp = document.getElementById("confirmPasswordWarningSignUp");
-  const nameWarningSignUp = document.getElementById("nameWarningSignUp");
-  const citizenshipPhotoWarningSignUp = document.getElementById("citizenshipPhotoWarningSignUp");
+  // const registerForm = document.getElementById("registerForm");
+  // const nameInput = document.getElementById("sName");
+  // const emailInput = document.getElementById("sEmail");
+  // const passwordInput = document.getElementById("sPW");
+  // const confirmPasswordInput = document.getElementById("sCPW");
+  // const citizenshipPhotoInput = document.getElementById("citizenshipPhoto");
+  // const emailWarningSignUp = document.getElementById("emailWarningSignUp");
+  // const passwordWarningSignUp = document.getElementById("passwordWarningSignUp");
+  // const confirmPasswordWarningSignUp = document.getElementById("confirmPasswordWarningSignUp");
+  // const nameWarningSignUp = document.getElementById("nameWarningSignUp");
+  // const citizenshipPhotoWarningSignUp = document.getElementById("citizenshipPhotoWarningSignUp");
 
-  // Validate an email address
-  function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  }
+  // // Validate an email address
+  // function isValidEmail(email) {
+  //   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  //   return emailRegex.test(email);
+  // }
 
-  // Validate a strong password
-  function isValidStrongPassword(password) {
-    const strongPasswordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}$/;
-    return strongPasswordRegex.test(password);
-  }
+  // // Validate a strong password
+  // function isValidStrongPassword(password) {
+  //   const strongPasswordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}$/;
+  //   return strongPasswordRegex.test(password);
+  // }
 
-  // Input event listener to the email field for real-time validation
-  emailInput.addEventListener("input", function () {
-    const email = emailInput.value;
-    if (!isValidEmail(email)) {
-      emailWarningSignUp.innerText = "Please enter a valid email address.";
-      emailWarningSignUp.style.color = "red";
-    } else {
-      emailWarningSignUp.innerText = "";
-    }
+  // // Input event listener to the email field for real-time validation
+  // emailInput.addEventListener("input", function () {
+  //   const email = emailInput.value;
+  //   if (!isValidEmail(email)) {
+  //     emailWarningSignUp.innerText = "Please enter a valid email address.";
+  //     emailWarningSignUp.style.color = "red";
+  //   } else {
+  //     emailWarningSignUp.innerText = "";
+  //   }
+  // });
+
+  // // Input event listener to the password field for real-time validation
+  // passwordInput.addEventListener("input", function () {
+  //   const password = passwordInput.value;
+  //   if (!isValidStrongPassword(password)) {
+  //     passwordWarningSignUp.innerText = "Password must be strong (at least 8 characters with uppercase, lowercase, digits, and at least one special character among \"@\", \"#\", \"$\", \"%\", \"^\", \"&\", or \"+\").";
+  //     passwordWarningSignUp.style.color = "red";
+  //   } else {
+  //     passwordWarningSignUp.innerText = "";
+  //   }
+  // });
+
+  // // Input event listener to the name field for real-time validation
+  // nameInput.addEventListener("input", function () {
+  //   const name = nameInput.value;
+  //   if (!name) {
+  //     nameWarningSignUp.innerText = "Name cannot be empty.";
+  //     nameWarningSignUp.style.color = "red";
+  //   } else {
+  //     nameWarningSignUp.innerText = "";
+  //   }
+  // });
+
+  // // Input event listener to the citizenship photo field for real-time validation
+  // citizenshipPhotoInput.addEventListener("change", function () {
+  //   const citizenshipPhoto = citizenshipPhotoInput.files[0];
+  //   if (!citizenshipPhoto) {
+  //     citizenshipPhotoWarningSignUp.innerText = "Citizenship photo is required.";
+  //     citizenshipPhotoWarningSignUp.style.color = "red";
+  //   } else {
+  //     citizenshipPhotoWarningSignUp.innerText = "";
+  //   }
+  // });
+
+  // // Click event listener to the "Register" button
+  // document.getElementById("registerButton").addEventListener("click", function (event) {
+  //   event.preventDefault(); // Prevent the default form submission
+
+  //   const name = nameInput.value;
+  //   const email = emailInput.value;
+  //   const password = passwordInput.value;
+  //   const confirmPassword = confirmPasswordInput.value;
+  //   const citizenshipPhoto = citizenshipPhotoInput.files[0];
+
+  //   // Name validation
+  //   if (!name) {
+  //     nameWarningSignUp.innerText = "Name cannot be empty.";
+  //     nameWarningSignUp.style.color = "red";
+  //     return;
+  //   } else {
+  //     nameWarningSignUp.innerText = "";
+  //   }
+
+  //   // Email validation
+  //   if (!isValidEmail(email)) {
+  //     emailWarningSignUp.innerText = "Please enter a valid email address.";
+  //     emailWarningSignUp.style.color = "red";
+  //     return;
+  //   } else {
+  //     emailWarningSignUp.innerText = "";
+  //   }
+
+  //   // Password and confirm password match
+  //   if (password !== confirmPassword) {
+  //     confirmPasswordWarningSignUp.innerText = "Passwords do not match.";
+  //     confirmPasswordWarningSignUp.style.color = "red";
+  //     return;
+  //   } else {
+  //     confirmPasswordWarningSignUp.innerText = "";
+  //   }
+
+  //   // Password validation
+  //   if (!isValidStrongPassword(password)) {
+  //     passwordWarningSignUp.innerText = "Password must be strong (at least 8 characters with uppercase, lowercase, digits, and at least one special character among \"@\", \"#\", \"$\", \"%\", \"^\", \"&\", or \"+\").";
+  //     passwordWarningSignUp.style.color = "red";
+  //     return;
+  //   } else {
+  //     passwordWarningSignUp.innerText = "";
+  //   }
+
+  //   // Citizenship photo validation
+  //   if (!citizenshipPhoto) {
+  //     citizenshipPhotoWarningSignUp.innerText = "Citizenship photo is required.";
+  //     citizenshipPhotoWarningSignUp.style.color = "red";
+  //     return;
+  //   } else {
+  //     citizenshipPhotoWarningSignUp.innerText = "";
+  //   }
+
+     document.querySelector(".modal-body").style.display = "none";
+  document.getElementById("otpInputField").style.display = "block";
   });
-
-  // Input event listener to the password field for real-time validation
-  passwordInput.addEventListener("input", function () {
-    const password = passwordInput.value;
-    if (!isValidStrongPassword(password)) {
-      passwordWarningSignUp.innerText = "Password must be strong (at least 8 characters with uppercase, lowercase, digits, and at least one special character among \"@\", \"#\", \"$\", \"%\", \"^\", \"&\", or \"+\").";
-      passwordWarningSignUp.style.color = "red";
-    } else {
-      passwordWarningSignUp.innerText = "";
-    }
-  });
-
-  // Input event listener to the name field for real-time validation
-  nameInput.addEventListener("input", function () {
-    const name = nameInput.value;
-    if (!name) {
-      nameWarningSignUp.innerText = "Name cannot be empty.";
-      nameWarningSignUp.style.color = "red";
-    } else {
-      nameWarningSignUp.innerText = "";
-    }
-  });
-
-  // Input event listener to the citizenship photo field for real-time validation
-  citizenshipPhotoInput.addEventListener("change", function () {
-    const citizenshipPhoto = citizenshipPhotoInput.files[0];
-    if (!citizenshipPhoto) {
-      citizenshipPhotoWarningSignUp.innerText = "Citizenship photo is required.";
-      citizenshipPhotoWarningSignUp.style.color = "red";
-    } else {
-      citizenshipPhotoWarningSignUp.innerText = "";
-    }
-  });
-
-  // Click event listener to the "Register" button
-  document.getElementById("registerButton").addEventListener("click", function (event) {
-    event.preventDefault(); // Prevent the default form submission
-
-    const name = nameInput.value;
-    const email = emailInput.value;
-    const password = passwordInput.value;
-    const confirmPassword = confirmPasswordInput.value;
-    const citizenshipPhoto = citizenshipPhotoInput.files[0];
-
-    // Name validation
-    if (!name) {
-      nameWarningSignUp.innerText = "Name cannot be empty.";
-      nameWarningSignUp.style.color = "red";
-      return;
-    } else {
-      nameWarningSignUp.innerText = "";
-    }
-
-    // Email validation
-    if (!isValidEmail(email)) {
-      emailWarningSignUp.innerText = "Please enter a valid email address.";
-      emailWarningSignUp.style.color = "red";
-      return;
-    } else {
-      emailWarningSignUp.innerText = "";
-    }
-
-    // Password and confirm password match
-    if (password !== confirmPassword) {
-      confirmPasswordWarningSignUp.innerText = "Passwords do not match.";
-      confirmPasswordWarningSignUp.style.color = "red";
-      return;
-    } else {
-      confirmPasswordWarningSignUp.innerText = "";
-    }
-
-    // Password validation
-    if (!isValidStrongPassword(password)) {
-      passwordWarningSignUp.innerText = "Password must be strong (at least 8 characters with uppercase, lowercase, digits, and at least one special character among \"@\", \"#\", \"$\", \"%\", \"^\", \"&\", or \"+\").";
-      passwordWarningSignUp.style.color = "red";
-      return;
-    } else {
-      passwordWarningSignUp.innerText = "";
-    }
-
-    // Citizenship photo validation
-    if (!citizenshipPhoto) {
-      citizenshipPhotoWarningSignUp.innerText = "Citizenship photo is required.";
-      citizenshipPhotoWarningSignUp.style.color = "red";
-      return;
-    } else {
-      citizenshipPhotoWarningSignUp.innerText = "";
-    }
-
-    alert("signup working");
-  });
-});
+// });
 
 
 

@@ -106,11 +106,10 @@ figcaption {
 
 .modal-backdrop.static {
   opacity: 0.5;
-  /* Adjust the opacity level as desired */
   background-color: #000;
-  /* Adjust the background color as desired */
 }
-/* styles.css */
+
+
 .custom-input-group {
   padding: 0 10px;
 }
@@ -123,9 +122,11 @@ figcaption {
   border-radius: 10px;
   transition: border-color 0.2s;
 }
+
 #otpInput:focus {
-  outline: none; 
+  outline: none;
 }
+
 @media (max-width: 450px) {
   .h-custom {
     height: 100%;

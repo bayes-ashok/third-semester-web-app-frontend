@@ -53,9 +53,7 @@
                 <input type="email" id="inputField1" class="form-control form-control-lg"
                   placeholder="Enter your Email" />
                 <label class="form-label" for="inputField1">Email address</label>
-                <div class="notification" id="notification"></div>
-                <div class="notification" id="notification"></div>
-                <div id="emailWarning" style="color: red;"></div>
+                <div id="emailWarning" class = "warning" style="color: red;"></div>
               </div>
 
               <!-- Password input -->
@@ -106,14 +104,16 @@
                       <form id="registerForm">
                         <!-- Registration form fields -->
                         <div class="form-outline mb-4">
-                          <input type="text" id="inputField3" class="form-control form-control-lg"
+                          <input type="text" id="sName" class="form-control form-control-lg"
                             placeholder="Enter your Name" />
-                          <label class="form-label" for="inputField3">Name</label>
+                          <label class="form-label" for="sName">Name</label>
+                          <div id="nameWarning" style="color: red;" class="warning"></div>
                         </div>
                         <div class="form-outline mb-4">
-                          <input type="email" id="inputField4" class="form-control form-control-lg"
+                          <input type="email" id="sEmail" class="form-control form-control-lg"
                             placeholder="Enter your Email" />
-                          <label class="form-label" for="inputField4">Email address</label>
+                          <label class="form-label" for="sEmail">Email address</label>
+                          <div id="emailWarningSignUp" style="color: red;" class="warning"></div>
                         </div>
 
                         <div class="form-outline mb-3">
@@ -123,22 +123,27 @@
 
 
                         <div class="form-outline mb-3">
-                          <input type="password" id="inputField5" class="form-control form-control-lg"
+                          <input type="password" id="sPW" class="form-control form-control-lg"
                             placeholder="Create a Password" />
-                          <label class="form-label" for="inputField5">Password</label>
+                          <label class="form-label" for="sPW">Password</label>
+                          <div id="passwordWarningSignUp" style="color: red;" class="warning"></div>
                         </div>
 
                         <div class="form-outline mb-3">
-                          <input type="password" id="inputField6" class="form-control form-control-lg"
+                          <input type="password" id="sCPW" class="form-control form-control-lg"
                             placeholder="Confirm Password" />
-                          <label class="form-label" for="inputField6">Confirm Password</label>
+                          <label class="form-label" for="sCPW">Confirm Password</label>
+                          <div id="confirmPasswordWarningSignUp" style="color: red;" class="warning"></div>
                         </div>
-                        <!-- ... (other registration form fields) ... -->
+                        
 
                         <div class="text-center text-lg-start pt-2">
-                          <button type="button" class="btn btn-primary btn-lg"
+                          <button id="registerButton" type="button" class="btn btn-primary btn-lg"
                             style="padding-left: 2.5rem; padding-right: 2.5rem;">Register</button>
                         </div>
+                <div class="notification" id="notification"></div>
+
+                        <div id="registrationWarning" class="warning"></div>
                       </form>
                     </div>
                   </div>

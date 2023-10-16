@@ -97,15 +97,12 @@ figcaption {
   animation-delay: 0.4s;
 }
 
-#emailWarning {
-  color: red;
-  font-size: 12px;
-}
-
 .warning {
   color: red;
   font-size: 12px;
 }
+
+
 
 .modal-backdrop.static {
   opacity: 0.5;

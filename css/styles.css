@@ -110,7 +110,22 @@ figcaption {
   background-color: #000;
   /* Adjust the background color as desired */
 }
+/* styles.css */
+.custom-input-group {
+  padding: 0 10px;
+}
 
+#otpInput {
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  border-radius: 10px;
+  transition: border-color 0.2s;
+}
+#otpInput:focus {
+  outline: none; 
+}
 @media (max-width: 450px) {
   .h-custom {
     height: 100%;

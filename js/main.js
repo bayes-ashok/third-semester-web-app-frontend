@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // const nameWarningSignUp = document.getElementById("nameWarningSignUp");
   // const citizenshipPhotoWarningSignUp = document.getElementById("citizenshipPhotoWarningSignUp");
 
-  // // Validate an email address
+  // // // Validate an email address
   // function isValidEmail(email) {
   //   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   //   return emailRegex.test(email);

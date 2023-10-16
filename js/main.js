@@ -110,6 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+
 //validation in signup
 document.addEventListener("DOMContentLoaded", function () {
   const registerForm = document.getElementById("registerForm");
@@ -121,6 +122,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const emailWarningSignUp = document.getElementById("emailWarningSignUp");
   const passwordWarningSignUp = document.getElementById("passwordWarningSignUp");
   const confirmPasswordWarningSignUp = document.getElementById("confirmPasswordWarningSignUp");
+  const nameWarningSignUp = document.getElementById("nameWarningSignUp");
+  const citizenshipPhotoWarningSignUp = document.getElementById("citizenshipPhotoWarningSignUp");
 
   // Validate an email address
   function isValidEmail(email) {
@@ -156,6 +159,28 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  // Input event listener to the name field for real-time validation
+  nameInput.addEventListener("input", function () {
+    const name = nameInput.value;
+    if (!name) {
+      nameWarningSignUp.innerText = "Name cannot be empty.";
+      nameWarningSignUp.style.color = "red";
+    } else {
+      nameWarningSignUp.innerText = "";
+    }
+  });
+
+  // Input event listener to the citizenship photo field for real-time validation
+  citizenshipPhotoInput.addEventListener("change", function () {
+    const citizenshipPhoto = citizenshipPhotoInput.files[0];
+    if (!citizenshipPhoto) {
+      citizenshipPhotoWarningSignUp.innerText = "Citizenship photo is required.";
+      citizenshipPhotoWarningSignUp.style.color = "red";
+    } else {
+      citizenshipPhotoWarningSignUp.innerText = "";
+    }
+  });
+
   // Click event listener to the "Register" button
   document.getElementById("registerButton").addEventListener("click", function (event) {
     event.preventDefault(); // Prevent the default form submission
@@ -165,6 +190,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const password = passwordInput.value;
     const confirmPassword = confirmPasswordInput.value;
     const citizenshipPhoto = citizenshipPhotoInput.files[0];
+
+    // Name validation
+    if (!name) {
+      nameWarningSignUp.innerText = "Name cannot be empty.";
+      nameWarningSignUp.style.color = "red";
+      return;
+    } else {
+      nameWarningSignUp.innerText = "";
+    }
 
     // Email validation
     if (!isValidEmail(email)) {
@@ -193,9 +227,19 @@ document.addEventListener("DOMContentLoaded", function () {
       passwordWarningSignUp.innerText = "";
     }
 
-    // Perform any other necessary actions here (e.g., form submission).
+    // Citizenship photo validation
+    if (!citizenshipPhoto) {
+      citizenshipPhotoWarningSignUp.innerText = "Citizenship photo is required.";
+      citizenshipPhotoWarningSignUp.style.color = "red";
+      return;
+    } else {
+      citizenshipPhotoWarningSignUp.innerText = "";
+    }
+
+    alert("signup working");
   });
 });
+
 
 
 
